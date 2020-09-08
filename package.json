@@ -6,10 +6,10 @@
   "license": "ISC",
   "description": "",
   "scripts": {
-    "start": "node server/server.js",
-    "dev": "webpack-dev-server --config config/webpack.client.config.js",
     "build:client": "webpack --config config/webpack.client.config.js",
-    "build:server": "webpack --config config/webpack.server.config.js"
+    "build:server": "webpack --config config/webpack.server.config.js",
+    "build": "npm run build:client && npm run build:server",
+    "start": "node server/server.js"
   },
   "dependencies": {
     "es6-promise": "^4.2.8",
