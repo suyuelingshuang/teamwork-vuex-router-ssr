@@ -4,6 +4,9 @@ import createRouter from './router';
 import App from './App.vue';
 import {sync} from 'vuex-router-sync'
 import Promise from 'promise-polyfill'
+import vueLoadingPage from 'vue-loading-page'
+
+Vue.use(vueLoadingPage)
 
 export function createApp() {
   
