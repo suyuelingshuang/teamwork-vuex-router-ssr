@@ -2,8 +2,8 @@
     <div class="notice">
         <Banner home title="相关通知"></Banner>
         <ul id="notices" @click="toggle">
-            <a class="nav actived danger" href="#danger" tag="li">紧急通知</a>
-            <a class="nav" href="#normal" tag="li">所有通知</a>
+            <a class="nav actived danger" tag="li">紧急通知</a>
+            <a class="nav" tag="li">所有通知</a>
         </ul>
         <keep-alive>
             <Operation class="opt" :operations="operations" :key="hash"></Operation>
@@ -37,8 +37,7 @@ export default {
             return this.dangerOpt ? this.dangerDynamicData : this.dynamicData;
         },
         hash(){
-            let res = this.$route.hash;
-            return res ? res : 'danger';
+            return this.dangerOpt ? 'danger' : 'normal';
         }
     },
     methods: {
@@ -68,14 +67,6 @@ export default {
     // },
     mounted() {
         console.log('Notice.vue mounted');
-        if(this.$route.hash && this.$route.hash != '#danger'){
-            let ULChild = document.getElementById('notices').children;
-            let len = ULChild.length;
-            for(let i=0; i<len; i++){
-                ULChild[i].classList.toggle('actived');
-            }
-            this.dangerOpt = false;
-        }
         console.log(this.$route);
     },
     // beforeUpdate() {
