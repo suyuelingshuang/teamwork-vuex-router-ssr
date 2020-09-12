@@ -1,6 +1,6 @@
 <template>
     <div class="operation">
-        <ul class="operations">
+        <ul class="operations" v-if="showOperations.length">
             <li v-for="(item,index) in showOperations">
                 <span :class="[item.danger ? redHand: blueHand, hand]"></span>
                 <span>{{new Date(item.recent).toLocaleString()}}</span><span><strong>{{item.controller}}</strong></span><span>{{item.operate}}</span><span>{{item.target}}</span>
