@@ -6,7 +6,7 @@
             <li>我发起的任务</li>
         </ul>
         <keep-alive>
-            <Task class="tasks" :tasks="tasks"></Task>
+            <Task class="tasks" :tasks="tasks" :key="hash"></Task>
         </keep-alive>
     </div>
 </template>
@@ -35,6 +35,9 @@ export default {
             })
             let temp = this.mineOpt ? this.taskData : myTaskTemp;
             return temp;
+        },
+        hash(){
+            return this.mineOpt ? 'task' : 'myTask'
         }
     },
     methods: {

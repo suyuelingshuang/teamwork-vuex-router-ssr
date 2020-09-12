@@ -5,7 +5,7 @@
             <li class="actived">我的项目</li>
             <li>我负责的项目</li>
         </ul> 
-        <ProjectList ref="pList" class="pList"></ProjectList>
+        <ProjectList ref="pList" class="pList" :key="flag"></ProjectList>
     </div>
 </template>
 <script>
